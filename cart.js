@@ -35,33 +35,46 @@ function addToCart() {
     let pVal = elProdct.value
     console.log(pVal)
     let productObj = {
-        name: pVal,
-        Quantity: 1,
-        PPU: 1000
+        name: $('#products').val(),
+        quantity: $('#qty').val(),
+        ppu: $('#ppu').val(),
     }
+    
 
     // Clear existing items in the table
-    let productList = document.getElementById("productList")
-    for (let x = 0; x < products.length; x++) {
-        productList.deleteRow(1)
-    }
-    //append and push??
+    // let productList = document.getElementById("productList")
+    // for (let x = 0; x < products.length; x++) {
+    //     productList.deleteRow(1)
+    // }
+
+    $('#productBody').html("")
+
     products.push(productObj)
-    loadDataOld()
+    loadData()
 }
 
 function loadData() {
     let allRows = ""
+    let gross = 0
     for (let p in products) {
-        let cellName = "<td>" + products[p].name + "</td>"
-        let cellQuantity = "<td>" + products[p].Quantity + "</td>"
-        let cellPPU = "<td>" + products[p].PPU + "</td>"
+        let cellName = `<td><img class='icon' src='icon-delete.png' onclick='deleteProduct("${p}")'> ` + products[p].name + "</td>"
+        let cellQuantity = '<td class="text-right">' + products[p].Quantity + "</td>"
+        let cellPPU = '<td class="text-right">' + products[p].PPU + "</td>"
         let total = products[p].PPU * products[p].Quantity
-        let cellTotal = "<td>" + total + "</td>"
+        gross += total
+        let cellTotal = '<td class="text-right">' + total + "</td>"
         let row = `<tr>${cellName}${cellQuantity}${cellPPU}${cellTotal}</tr>`
         allRows += row
     }
     $('#productBody').html(allRows)
+
+    $("#gross").html(gross)
+
+    let vat = gross * 0.07
+    let net = gross + vat
+    $("#vat").html(vat.toFixed(2))
+    $("#net").html(net.toFixed(2))
+
 }
 
 function loadDataOld() {
@@ -118,4 +131,12 @@ function loadDataOld() {
 
     let netElem = document.getElementById("netID")
     netElem.innerHTML = net
+}
+
+// TODO Should use product ID instead of name
+function deleteProduct(index) {
+    console.log("DELETE",index)
+    delete products[index]  // delete the element from array
+    $('#productBody').html("")
+    loadData()
 }

@@ -5,6 +5,27 @@
             <link rel="stylesheet" href="main.css">
         </head>
         <body onload="loadData()">
+            <h1>Cart</h1>
+            <div>
+                Product:
+                <select id="products">
+                    <option value="Monitor Light Bar"> Monitor Light Bar </option>
+                    <option value="Steelseries Earpad"> Steelseries Earpad </option>
+                    <option value="Deskpad"> Deskpad </option>
+        
+                </select>
+
+                Quantity:
+    
+                <input type="number" id="qty" style="width: 4rem;"/>
+                
+                PPU:
+                <input type="number" id="ppu" style="width: 4rem;"/>
+        
+                <button onclick="addToCart()"> + Add </button>
+            </div>
+
+
             <h1>Product Table with Dynamic Content</h1>
             <span id="myName">xxxxxxxx</span>
             <table
@@ -18,7 +39,7 @@
                     <th style="width: 20%">Total</th>
                 </thead>
 
-                <tbody>
+                <tbody id="productBody">
 
                 </tbody>
 
@@ -46,7 +67,8 @@
                 </tfoot>
 
             </table>
-        
-            <script src="product.js"> </script>
+            
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"> </script>
+            <script src="cart.js"></script>
         </body>
 </html>
