@@ -54,6 +54,9 @@ function addToCart() {
 }
 
 function loadData() {
+    var e = document.getElementById("myName");
+    e.innerHTML = "Lynn Thit Nyi Nyi"
+    
     let allRows = ""
     let gross = 0
     for (let p in products) {
