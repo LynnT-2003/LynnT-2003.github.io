@@ -35,9 +35,9 @@ function addToCart() {
     let pVal = elProdct.value
     console.log(pVal)
     let productObj = {
-        name: pVal,
-        Quantity: 1,
-        PPU: 1000
+        name: $('#products').val(),
+        quantity: $('#qty').val(),
+        ppu: $('#ppu').val(),
     }
 
     // Clear existing items in the table

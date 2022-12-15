@@ -36,8 +36,8 @@ function addToCart() {
     console.log(pVal)
     let productObj = {
         name: $('#products').val(),
-        quantity: $('#qty').val(),
-        ppu: $('#ppu').val(),
+        Quantity: $('#qty').val(),
+        PPU: $('#ppu').val(),
     }
     
 
@@ -68,12 +68,12 @@ function loadData() {
     }
     $('#productBody').html(allRows)
 
-    $("#gross").html(gross)
+    $("#grossID").html(gross)
 
     let vat = gross * 0.07
     let net = gross + vat
-    $("#vat").html(vat.toFixed(2))
-    $("#net").html(net.toFixed(2))
+    $("#vatID").html(vat.toFixed(2))
+    $("#netID").html(net.toFixed(2))
 
 }
 
