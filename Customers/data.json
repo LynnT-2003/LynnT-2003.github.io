@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Leon Kennedy",
+        "email": "leon@racoon.com",
+        "phone": "098-123-4567"
+    },
+
+    {
+        "name": "Clair Redfield",
+        "email": "clair@racoon.com",
+        "phone": "098-123-9999"
+    },
+
+    {
+        "name": "Jill Valentine",
+        "email": "jill@racoon.com",
+        "phone": "098-456-9999"
+    },
+
+    
+	{
+		"name": "Jordan Lane",
+		"email": "jordan@racoon.com",
+		"phone": "098-456-9999"
+	},
+
+	{
+		"name": "Iola Terry",
+		"email": "iola@racoon.com",
+		"phone": "098-456-5783"
+	},
+
+	{
+		"name": "Dahlia Copeland",
+		"email": "dahlia@racoon.com",
+		"phone": "098-456-9789"
+	},
+
+	{
+		"name": "Tallulah Walter",
+		"email": "tallulah@racoon.com",
+		"phone": "098-456-1254"
+	},
+
+	{
+		"name": "Merrill Kane",
+		"email": "merrill@racoon.com",
+		"phone": "098-456-7246"
+	}
+]
