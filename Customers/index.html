@@ -58,24 +58,8 @@
                     <th>Email</th>
                     <th>Phone</th>
                 </tr>
+            <tbody id="productBody"></tbody>
             </thead>
-            <tbody>
-                <tr>
-                    <td>Leon Kenedy</td>
-                    <td>leon@racoon.com</td>
-                    <td>098-123-4567</td>
-                </tr>
-                <tr>
-                    <td>Clair Redfield</td>
-                    <td>clair@racoon.com</td>
-                    <td>098-123-9999</td>
-                </tr>
-                <tr>
-                    <td>Jill Valentine</td>
-                    <td>jill@racoon.com</td>
-                    <td>096-456-9999</td>
-                </tr>
-            </tbody>
         </table>
     </div>
 
@@ -88,24 +72,24 @@
                 </div>
                 <div class="modal-body">
                     <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">Name</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput1"
+                        <label for="inputName" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="inputName"
                             placeholder="Joe Black">
                     </div>
                     <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                        <input type="email" class="form-control" id="exampleFormControlInput1"
+                        <label for="inputEmail" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="inputEmail"
                             placeholder="name@example.com">
                     </div>
                     <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">Phone</label>
-                        <input type="phone" class="form-control" id="exampleFormControlInput1"
+                        <label for="inputPhone" class="form-label">Phone</label>
+                        <input type="phone" class="form-control" id="inputPhone"
                             placeholder="0987654321">
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Add</button>
+                    <button type="button" class="btn btn-primary" onclick="addCustomer()">Add</button>
                 </div>
             </div>
         </div>
