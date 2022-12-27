@@ -1,19 +1,4 @@
 var customers=[
-    {
-        name: "Leon Kennedy",
-        email: "leon@racoon.com",
-        phone: "098-123-4567"
-    },
-    {
-        name: "Clair Redfield",
-        email: "clair@racoon.com",
-        phone: "098-123-9999"
-    },
-    {
-        name: "Jill Valentine",
-        email: "jill@racoon.com",
-        phone: "096-456-9999"
-    },
 ]
 
 function addCustomer() {
@@ -22,20 +7,39 @@ function addCustomer() {
     let elEmail = document.getElementById("inputEmail")
     let elPhone = document.getElementById("inputPhone")
     let customerObject = {
-        addedName: elName.value,
-        addedEmail: $('#inputEmail').val(),
-        addedPhone: $('#inputPhone').val(),
+        name: elName.value,
+        email: $('#inputEmail').val(),
+        phone: $('#inputPhone').val(),
     }
     
     customers.push(customerObject)
     console.log(customers)
     let cStr = `<tr>
-        <td>${customerObject.addedName}</td>
-        <td>${customerObject.addedEmail}</td>
-        <td>${customerObject.addedPhone}</td>
+        <td><img style="width: 1.5em;" src='icon-delete-2.png' onclick='deleteCustomer("${(customers.length)-1}")'>${customerObject.name}</td>
+        <td>${customerObject.email}</td>
+        <td>${customerObject.phone}</td>
     <tr>`
     // $('#productBody').html(cStr) // this also works
     $("#data-table tr:last").after(cStr)
+}
+
+function deleteCustomer(index) {
+    console.log(customers)
+    console.log(delete customers[index])
+    var count = $('#data-table tr').length
+    while (count > 1){
+        document.getElementById("data-table").deleteRow(1);
+        count--
+    }
+
+    for (let c in customers) {
+        let cStr = `<tr>
+            <td><img style="width: 1.5em;" src='icon-delete-2.png' onclick='deleteCustomer("${c}")'>${customers[c].name}</td>
+            <td>${customers[c].email}</td>
+            <td>${customers[c].phone}</td>
+        </tr>`
+        $("#data-table tr:last").after(cStr)
+    }
 }
 
 $(document).ready(function () {
@@ -49,11 +53,19 @@ $(document).ready(function () {
         
         for(let d in data){
             let dataStr = `<tr>
-                <td>${data[d].name}</td>
+                <td><img style="width: 1.5em;" src='icon-delete-2.png' onclick='deleteCustomer("${d}")'>${data[d].name}</td>
                 <td>${data[d].email}</td>
                 <td>${data[d].phone}</td>
             </tr>`
+            let DataObj = {
+                name: data[d].name,
+                email: data[d].email,
+                phone: data[d].phone
+            }
             $("#data-table tr:last").after(dataStr)
+            customers.push(DataObj)
         }
+        console.log(customers)
     });
 });
+
